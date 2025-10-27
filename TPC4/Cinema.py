@@ -27,17 +27,16 @@ def insersala(cinema, sala):
         cinema.append(sala[2])
     return cinema
 def menu():
-    print(
-        '''1. `listar( cinema )` - que lista no monitor todos os filmes que estão em exibição nas salas do cinema passado como argumento;
-        2. `disponivel( cinema, filme, lugar )` - que dá como resultado **False** se o lugar lugar já estiver ocupado na sala onde o filme está a ser exibido e dará como resultado **True** se o inverso acontecer;
-        3. `vendebilhete( cinema, filme, lugar )` - que dá como resultado um novo cinema resultante de acrescentar o lugar à lista dos lugares ocupados, na sala onde está a ser exibido o filme;
-        4. `listardisponibilidades( cinema )` - que, para um dado cinema, lista no monitor para cada sala, o filme que está a ser exibido e o total de lugares disponíveis nessa sala (número de lugares na sala menos o número de lugares ocupados);
-        5. `inserirSala( cinema, sala )` - que acrescenta uma sala nova a um cinema (devendo verificar se a sala já existe);
-        6. Acrescente todas as outras funcionalidades que achar necessárias;
-        7. À semelhança do exercício 3, construa uma aplicação com um menu de interface para as operações.
-        '''
-    )
-    num=int(input("Escreve a tua opção"))
+    print('''\n=== Gestão de Cinema ===
+1. Inserir Sala
+2. Listar Filmes
+3. Vender Bilhete
+4. Verificar Disponibilidade
+5. Listar Disponibilidades
+6. Remover Sala
+0. Sair''')
+    
+    num=int(input("Escolha uma opção: "))
     if num ==1:
         lista=listar(cinema)
         for filmes in lista:
@@ -72,3 +71,5 @@ def menu():
         filme=str(input("Insira o filme"))
         sala=(num_lugares, lista, filme)
         insersala(cinema, sala)
+
+menu()
